@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(59, 46, 95);
+}
+.navbar {
+    background-color: rgb(63, 227, 230);
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+.navbar-brand {
+    position: absolute;
+    font-size: 70px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    color: rgb(59, 46, 95)
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    margin: 30px;
+    color: purple;
+    border-width: 5px;
+    border-color: rgb(42, 28, 83);
+    font-size: 30px;
+    font-weight: bold;
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+}
