@@ -10,5 +10,19 @@ module.exports = {
         })
         console.log("[creating post] w/", data)
         return data
+    },
+    getSubjects: async function(subject) {
+        console.log('questionController----getSubjects()', subject)
+        let results = await db.Question.aggregate(
+            [
+                {$match: {} },
+                {$group: { _id: "$subject" } }
+            ]
+        );
+        console.log("results._id", results._id)
+        
+        
+        console.log("results", results)
+        return results
     }
 }
