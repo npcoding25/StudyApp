@@ -34,7 +34,7 @@ body {
     padding: 5px;
     color: yellow;
     background-color: rgb(59, 46, 95);
-    border-width: 5px;
+    border-width: 3px;
     font-weight: bold;
 }
 #post-btn-area {
@@ -49,8 +49,39 @@ body {
 .form-label {
     margin: 5px;
     font-weight: bold;
-    color: rgb(59, 46, 95)
+    color: rgb(59, 46, 95);
 }
 .form-control {
     padding: 10px;
 }
+#title {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(59, 46, 95);
+    text-decoration: underline;
+}
+#subject-choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+    justify-content: center;
+}
+.subject-button {
+    margin: 10px;
+    color: yellow;
+    border-width: 4px;
+    border-color: rgb(42, 28, 83);
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(59, 46, 95);
+}
+
+/* #study-card {
+    display: flex;
+    justify-content: center;
+} */
