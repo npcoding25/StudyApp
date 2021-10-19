@@ -80,8 +80,18 @@ body {
     height: 150px;
     background-color: rgb(59, 46, 95);
 }
-
-/* #study-card {
-    display: flex;
-    justify-content: center;
-} */
+.flashcard {
+    margin: 30px;
+    color: yellow;
+    border-width: 5px;
+    border-color: rgb(42, 28, 83);
+    font-size: 30px;
+    font-weight: bold;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(59, 46, 95);
+    /* transform: rotateY('180') */
+}
+.hide {
+    display: none;
+}
