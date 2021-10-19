@@ -41,34 +41,29 @@ function chooseSubject(event) {
         for (var i=0; i<result.length; i++) {
             results.push(result[i])
         }
-        $('#subject-choices').html('')
-        $('#subject-choices').prepend(`
-            <p onClick="getAnswer(event)">${result[0].question}</p>
-        `)
+        $('#study-card').html('')
+        $('#study-card').prepend(`
+            <button onClick="getAnswer(event)" class="flashcard">${result[0].question}</button>
 
-        
-        // for (var i=0; i<result.length; i++) {
-            
-        //     console.log("in loop", event, result[i])
-        //     // $('#subject-choices').html('')
-        //     // $('#subject-choices').prepend(`<p>${result[i].answer}</p>`)
-        // }
+        `)
     })
-    // console.log("results----------", results)
 }
 
 function getAnswer(event) {
     event = event.target.textContent
 
     console.log("Getting answer", event)
-    $('#subject-choices').html('') 
+    $('#study-card').html('') 
     for (var i=0; i<results.length; i++) {
         if (event === results[i].question) {
 
-            $('#subject-choices').prepend(`
-                <p onClick="nextQuestion(event)">${results[i].answer}</p>
+            $('#study-card').prepend(`
+                <button onClick="nextQuestion(event)" class="flashcard">${results[i].answer}</button>
             `)
+
+            break
         }
+        
     }
 
 }  
@@ -76,18 +71,20 @@ function getAnswer(event) {
 function nextQuestion(event) {
     event = event.target.textContent
 
-    console.log("getting next question", event)
-    $('#subject-choices').html('')
+    $('#study-card').html('')
     for (var i=0; i<results.length; i++) {
-
-        if (event === results[i].answer && results[i+1].answer) {
-            $('#subject-choices').prepend(`
-                <p onClick="getAnswer(event)">${results[i+1].question}</p>
-            `)
+        console.log(event, results)
+        if (results.length === 1) {
+        
+            goToMenu()
         } else {
-            
-        }
 
+            $('#study-card').prepend(`
+                <button onClick="getAnswer(event)" class="flashcard">${results[i+1].question}</button>
+            `)
+            results.splice(i, 1)
+            break
+        }
     }
 }
 
@@ -96,4 +93,4 @@ function goToMenu() {
 }
 
 
-$('#post-btn').on('click', newQuestion);
+$('#post-btn').on('click', newQuestion)
