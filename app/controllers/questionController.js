@@ -24,5 +24,11 @@ module.exports = {
         
         console.log("results", results)
         return results
+    },
+    getQuestions: async function(subjectData) {
+        console.log('questionController---- getQuestions()', subjectData)
+        let results = await db.Question.find({subject: subjectData})
+        console.log("results=======================", results)
+        return results
     }
 }

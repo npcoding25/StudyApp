@@ -11,6 +11,12 @@ function router(app) {
         const data = await questionController.getSubjects()
         res.send(data)
     });
+    app.get("/api/question", async function (req, res) {
+        console.log("req=============================================", req._parsedUrl.query)
+        // console.log("res", res)
+        const data = await questionController.getQuestions(req._parsedUrl.query)
+        res.send(data)
+    })
 }
 
 module.exports = router;
